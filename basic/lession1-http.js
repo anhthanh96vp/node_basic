@@ -1,9 +1,9 @@
 //Có các module đại loại như là:
 //http:  module này có nhiệm vụ khởi tạo một cổng kết nối HTTP server trả về client.
-//url
+//url: module này để lấy url browser
 //querystring
 //path
-//fs
+//fs: module file system này đại khái là tương tác như tạo, thêm, xóa, sửa file (lession3)
 //util
 
 // Dòng đầu tiên khai báo(chính xác hơn là yêu cầu, giống với import và using)
@@ -19,14 +19,11 @@ function onRequest(request, response) {
   // -Hàm writeHead() thiết lập kiểu dữ liệu mà server muốn trả về. Ở đây sever trả về là 1 trang html
   response.writeHead(200, { "Content-Type": "text/html" });
   // -Hàm  response.write() thiết lập nội dung mà server muốn trả về trình duyệt, nội dung này có thể là text có thể là HTML code.
-  response.write("<html>");
-  response.write("<head>");
-  response.write("<meta charset='UTF - 8'>");
-  response.write("<title>Tiêu đề  </title>");
-  response.write("</head>");
-  response.write("<body> <h1>Chữ to đùng<h1> </body>");
+  response.write(
+    `<html><head><meta charset="utf-8"><title>Tiêu đề</title><body> <h1>Chữ to đùng<h1> </body></head></html>`
+  );
+
   response.write("Hello World");
-  response.write("</html>");
 
   // -Thuộc tính url này chứa các paramter trong URL mà client gửi lên server.
   // Lúc này các tiền tố phía sau domain sẽ được hiện ra nếu có: vd http://localhost:8000/toidicode thì url sẽ là /toidicode.
