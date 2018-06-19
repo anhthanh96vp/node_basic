@@ -5,16 +5,16 @@ var app = express();
 app.use(express.static("public"));
 
 app.get("/", function(req, res) {
-  res.send("Hello World");
+	res.send("Hello World");
 });
 
 var server = app.listen(8081, function() {
-  var host = server.address().address;
-  var port = server.address().port;
+	var host = server.address().address;
+	var port = server.address().port;
 
-  console.log(
-    "Ung dung Node.js dang lang nghe tai dia chi: http://%s:%s",
-    host,
-    port
-  );
+	console.log(
+		"Ung dung Node.js dang lang nghe tai dia chi: http://%s:%s",
+		host,
+		port
+	);
 });
