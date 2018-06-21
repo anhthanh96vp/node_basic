@@ -9,7 +9,7 @@ const app = express();
 const storage = multer.diskStorage({
 	destination: (req, file, callback) => {
 		// vị trí upload lên
-		callback(null, "./uploadfile");
+		callback(null, "./upload");
 	},
 	filename: (req, file, callback) => {
 		callback(null, file.originalname);
