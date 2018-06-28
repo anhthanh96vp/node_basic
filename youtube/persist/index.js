@@ -47,6 +47,7 @@ storage.initSync({
 // Hàm lấy danh sách sinh viên
 const getAllStudents = () => {
 	// Lấy sinh viên từ nơi lưu trữ
+	//Ở đây là lấy từ thư mục => node-persist/storage/mydata/students
 	let students = storage.getItemSync("students")
 
 	// Nếu không có sinh viên nào thì trả về một mảng rỗng
@@ -101,7 +102,6 @@ function addStudent(id, fullname) {
 	// set lại mảng mới được thêm vào file students
 	storage.setItemSync("students", students)
 }
-
 
 //-------------------------------
 

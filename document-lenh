@@ -1,0 +1,12 @@
+tạo file: touch index.js
+tạo thư mục: mkdir clgt
+kiểm tra đường dẫn: pwd
+kiểm tra hiện tại: ls hoặc ls -la
+
+
+
+cài đặt module: npm install express
+gỡ cài đặt module: npm uninstall express 
+cập nhật module: npm update express
+tìm kiếm module: npm search express
+kiểm tra : npm ls

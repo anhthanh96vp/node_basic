@@ -1,7 +1,9 @@
+// https://freetuts.net/ap-dung-yargs-nodejs-vao-ung-dung-quan-ly-hoc-sinh-596.html
+
 /*THƯ VIỆN STUDENT*/
 
 // Lúc test chỉ sử dụng được phiên bản npm install node-persist@0.0.8 --save
-// Mỗi lần lưu lại có khi phải restart lại visual mới hiển thị
+// Mỗi lần lưu lại có khi phải tắt đi mở lại file mới hiển thị
 
 // Load module node-persist
 const storage = require("node-persist")
@@ -17,6 +19,7 @@ storage.initSync({
 // Hàm lấy danh sách sinh viên
 const getAllStudents = () => {
 	// Lấy sinh viên từ nơi lưu trữ
+	//Ở đây là lấy từ thư mục => node-persist/storage/mydata/students
 	let students = storage.getItemSync("students")
 
 	// Nếu không có sinh viên nào thì trả về một mảng rỗng
@@ -99,7 +102,7 @@ function editStuent(studentId, studentName) {
 	storage.setItemSync("students", students)
 }
 
-//------------------------------
+//--------------------------------------
 
 // Hàm hiển thị danh sách sinh viên
 function showStudents() {
@@ -108,6 +111,8 @@ function showStudents() {
 		console.log(`Student:   ${student.fullname} (${student.id})`)
 	})
 }
+
+//---------------------------------------
 
 // ****ACTION****
 
@@ -152,10 +157,31 @@ let argv = yargs
 
 //Khi nhập action "node yargs-persist.js test" --> nó sẽ lưu action vào mảng argv._
 
-let action = argv._
+/*XỬ LÝ ACTION*/
 
-if (action == "list") {
-} else if (action == "create") {
-} else if (action == "edit") {
-} else if (action == "delete") {
-} else console.log("Error")
+// Lấy tên action
+let action = argv._[0]
+
+if (action === "list") {
+	showStudents()
+} else if (action === "create") {
+	addStudent(argv.id, argv.name)
+	console.log("Add Successfully!")
+	showStudents()
+} else if (action === "delete") {
+	removeStudent(argv.id)
+	console.log("Delete Successfully!")
+	showStudents()
+} else if (action === "edit") {
+	editStudent(argv.id, argv.name)
+	console.log("Edit Successfully!")
+	showStudents()
+} else {
+	console.log("Command not found!")
+	showStudents()
+}
+
+// Hiển thị danh sách -> node yargs-persist.js list
+// Thêm -> node yargs-persist.js create--id 2 --name Chuong
+// Sửa -> node yargs-persist.js edit--id 2 --name cuong
+// Xóa -> node yargs-persist.js delete --id 2

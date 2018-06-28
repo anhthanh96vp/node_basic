@@ -10,13 +10,13 @@ const yargs = require("yargs")
 //Ví dụ : node yargs.js get --username thanh --email vaicut
 
 var argv = yargs
-	.command("get", "Get List Students", function(yargs) {
+	.command("get", "Get List Students", yargs => {
 		return yargs.options({
 			username: {
 				// cấu hình cho name
-				demand: true, //
-				type: "string", // Kiểu dữ liệu nhập vào
-                alias: "u", // là tạo định danh (tên rút gọn hoặc tên giả) cho một key nào đó
+				demand: true, //Nếu ko nhập dữ liệu sẽ báo lỗi
+				type: "string", // Ép kiểu dữ liệu nhập vào
+				alias: "u", // là tạo định danh (tên rút gọn hoặc tên giả) cho một key nào đó
 				default: "Mặc Định", //giá trị username mặc định nếu ng dùng ko nhập
 				description: "Mô tả" // Mô tả
 				// ...

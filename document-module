@@ -1,0 +1,30 @@
+- MODULE PATH
++ path Module trong được sử dụng để Resolve và chuyển đổi các đường dẫn tới file.
+
+- MODULE URL
++ Module URL có chức năng tương tự như module Path nhưng thay vì xử lý path thì 
+module này lại xử lý URL hiện tại mà người dùng đang truy cập.
+
+- MODULE FS
++ Module FS (File System) là module dùng để xử lý đọc ghi file trên Server 
+
+- MODULE OS
++ Module trong Node.js cung cấp các hàm tiện ích cơ bản liên quan đến hệ điều hành.
+
+- MODULE NET
++ Module trong Node.js được sử dụng để tạo Server và Client. Module này cung cấp 
+một Network Wrapper không đồng bộ
+
+- MODULE DNS
++ DNS Module trong Node.js được sử dụng để thực hiện DNS Lookup. Module cung cấp một
+Network Wrapper không đồng bộ
+
+- MODULE DOMAIN
++ Được sử dụng để can thiệp các lỗi chưa được xử lý
+
+- MODULE CRYPTO
++ Được sử dụng để mã hóa dữ liệu (ví dụ như password)
+
+- MODULE QUERYSTRING
++  Phân tích cú pháp và định dạng chuỗi truy vấn bằng querystring
+

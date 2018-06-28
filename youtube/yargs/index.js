@@ -2,7 +2,7 @@
 
 // Yargs là một module có tác dụng tách chuỗi của các request và lấy các tham số + giá trị của các tham số, module này rất hữu ích trong việc giao tiếp lấy dữ liệu từ client.
 
-// Cú pháp mẫu
+// Cú pháp mẫu để sử dụng
 
 // var yargs = require("yargs")
 // var argv = yargs.argv._
@@ -56,6 +56,6 @@ if (typeof argv.n == "undefined") {
 	}
 }
 
-//CHẠY CODE 
+//CHẠY CODE
 
 // node index.js --n 5
