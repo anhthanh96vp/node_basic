@@ -29,9 +29,9 @@
 
 //Hàm clear dùng để xóa tất cả các key trong bộ nhớ và ổ đĩa.
 
-storage.clear()
-// hoặc
-storage.clearSync()
+// storage.clear()
+// // hoặc
+// storage.clearSync()
 
 // Load module node-persist
 const storage = require("node-persist")
@@ -101,6 +101,7 @@ function addStudent(id, fullname) {
 	// set lại mảng mới được thêm vào file students
 	storage.setItemSync("students", students)
 }
+
 
 //-------------------------------
 

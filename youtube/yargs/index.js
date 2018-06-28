@@ -1,11 +1,19 @@
 // https://freetuts.net/gioi-thieu-module-yargs-trong-nodejs-591.html
 
 // Yargs là một module có tác dụng tách chuỗi của các request và lấy các tham số + giá trị của các tham số, module này rất hữu ích trong việc giao tiếp lấy dữ liệu từ client.
-// Hàm kiểm tra số nguyên tố
 
+// Cú pháp mẫu
+
+// var yargs = require("yargs")
+// var argv = yargs.argv._
+
+// Để truyền tham sô dạng key => value thì ta sử dụng cú pháp sau:
+// node index.js --key = value
+
+// Hàm kiểm tra số nguyên tố
 // Quiz: Viết chương trình kiểm tra số n từ người dùng nhập vào có phải là số nguyên tố hay không.
 
-function testSNT(n) {
+const testSNT = n => {
 	// Biến cờ hiệu
 	var flag = true
 
@@ -21,30 +29,33 @@ function testSNT(n) {
 	else if (n == 2) {
 		flag = true
 	} else {
-        // lặp từ 3 tới n-1 với bước nhảy là 2 (i+=2)
-        //Vì lặp từ số lẻ với bước nhảy là +=2 nên i luôn luôn là số lẻ
-		for (var i = 3; i < n - 1; i += 2) {
+		// lặp từ 3 tới n-1 với bước nhảy là 2 (i+=2)
+		//Vì lặp từ số lẻ với bước nhảy là +=2 nên i luôn luôn là số lẻ
+		for (var i = 3; i < Math.sqrt(n); i += 2) {
 			if (n % i == 0) {
 				flag = false
 				break
 			}
 		}
 	}
-
 	return flag
 }
 
 // Main Code
-var yargs = require("yargs")
+let yargs = require("yargs")
 
-var argv = yargs.argv
-
+let argv = yargs.argv
+console.log(argv)
 if (typeof argv.n == "undefined") {
-	console.log("Ban chua nhap n")
+	console.log(`Bạn chưa nhập n`)
 } else {
-	if (kiem_tra_snt(argv.n)) {
-		console.log("La so nguyen to")
+	if (testSNT(argv.n)) {
+		console.log("Số nguyên tố")
 	} else {
-		console.log("Khong phai so nguyen to")
+		console.log("Không phải")
 	}
 }
+
+//CHẠY CODE 
+
+// node index.js --n 5
