@@ -3,9 +3,9 @@ import bodyParser from "body-parser"
 
 export const app = express()
 var i = 0
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+
 app.get("/", (req, res) => {
+	//mỗi lần gửi request lên i sẽ + thêm 1
 	i += 1
 	console.log(i)
 	res.send("Hello World!")
