@@ -16,8 +16,7 @@ const storage = multer.diskStorage({
 	}
 })
 
-// Thằng multer được truyền vào storage bằng với storage bên trên
-
+// Thằng multer được truyền vào storage với tham số là thằng storage bên trên
 //thằng singe tên phải giống tên của input type="flie" bên trang html
 const upload = multer({ storage: storage }).single("files")
 

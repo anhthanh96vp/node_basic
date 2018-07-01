@@ -5,9 +5,6 @@
 + Module URL có chức năng tương tự như module Path nhưng thay vì xử lý path thì 
 module này lại xử lý URL hiện tại mà người dùng đang truy cập.
 
-- MODULE FS
-+ Module FS (File System) là module dùng để xử lý đọc ghi file trên Server 
-
 - MODULE OS
 + Module trong Node.js cung cấp các hàm tiện ích cơ bản liên quan đến hệ điều hành.
 
@@ -27,4 +24,11 @@ Network Wrapper không đồng bộ
 
 - MODULE QUERYSTRING
 +  Phân tích cú pháp và định dạng chuỗi truy vấn bằng querystring
+
+- MODULE FS
++ Module FS (File System) là module dùng để xử lý đọc ghi file trên Server 
+
+- BUFFER
++ Mã hóa Unicode một cách tiện lợi với các dữ liệu nhị phân. Các lớp
+Buffer là các lớp toàn cục và có thể được truy cập trong ứng dụng mà không cần require() 
 

@@ -1,0 +1,10 @@
+https://viblo.asia/p/nodejs-tutorial-phan-7-su-dung-ejs-lam-template-engine-trong-express-Do754N74ZM6#_tao-mot-project-express-voi-express-generator-0
+
+Tạo 1 project bằng:  npm install -g express-generator
+Khởi tạo project = command: express
+Sau đó: npm install 
+npm install ejs 
+npm uninstall jade
+
+Vào file app.js đổi :app.set('view engine', 'jade') => app.set("view engine", "ejs")
+Start server: node ./bin/www

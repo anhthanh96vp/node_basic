@@ -1,0 +1,24 @@
+
+- Ask1
+Link: khoapham/body-parser-POST
+
+hỏi thầy Hoàng 2 phương thức post dữ liệu lên sử dụng 2 hàm của body parser khác nhau ở điểm nào
+1 cái có thể khởi tạo trên postman
+1 cái là post lên trực tiếp
+
+Và hỏi xem hàm bắt lỗi là nó xử lý như thế nào
+
+Và 3 cái hàm cuối của document body-parser có tác dụng gì
+
+
+// parse various different custom JSON types as JSON
+app.use(bodyParser.json({ type: 'application/*+json' }))
+
+// parse some custom thing into a Buffer
+app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
+
+// parse an HTML body into a string
+app.use(bodyParser.text({ type: 'text/html' }))
+
+
+- Ask2
