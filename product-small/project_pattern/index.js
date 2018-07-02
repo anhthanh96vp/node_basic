@@ -4,10 +4,14 @@ import bodyParser from "body-parser"
 
 const app = express()
 
+// CẤU HÌNH BODY PARSER
 //cấu hình bodyParser ra dạng json
 app.use(bodyParser.json())
 
-// cấu hình EJS
+//để nhận được dữ liệu từ form data post lên
+var urlencodedParser = bodyParser.urlencoded({ extended: true })
+
+// CẤU HÌNH EJS
 //đường dẫn đến thư mục views
 app.set("views", __dirname + "/apps/views")
 
@@ -15,7 +19,7 @@ app.set("views", __dirname + "/apps/views")
 //đều được hiểu là template
 app.set("view engine", "ejs")
 
-// Cấu hình static
+// CẤU HÌNH STATIC
 app.use("/static", express.static(__dirname + "/public"))
 
 // Import thư mục controllers

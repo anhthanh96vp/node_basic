@@ -7,5 +7,7 @@ router.get("/", (req, res) => {
 		message: "This is Admin Page"
 	})
 })
-
+router.get("/", (req, res) => {
+	res.render("signup")
+})
 module.exports = router
