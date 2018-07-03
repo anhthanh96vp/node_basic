@@ -1,9 +1,8 @@
 import config from "config"
 import mysql from "mysql"
 
-
 //Lấy dữ liệu từ file config
-var connection = mysql.createConnection({
+let connection = mysql.createConnection({
 	host: config.get("mysql.host"),
 	user: config.get("mysql.user"),
 	password: config.get("mysql.password"),
@@ -13,8 +12,10 @@ var connection = mysql.createConnection({
 
 connection.connect()
 
-getConnection = () => {
-	if (!connection) connection.connect()
+const getConnection = () => {
+	if (!connection) {
+		connection.connect()
+	}
 	return connection
 }
-module.exports = { getConnection: getConnection }
+module.exports = getConnection

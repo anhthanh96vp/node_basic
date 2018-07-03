@@ -8,8 +8,8 @@ const app = express()
 //cấu hình bodyParser ra dạng json
 app.use(bodyParser.json())
 
-//để nhận được dữ liệu từ form data post lên
-var urlencodedParser = bodyParser.urlencoded({ extended: true })
+//để nhận được dữ liệu từ form data post lên và xử lý nó
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // CẤU HÌNH EJS
 //đường dẫn đến thư mục views
