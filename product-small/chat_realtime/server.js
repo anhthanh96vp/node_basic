@@ -27,3 +27,4 @@ io.on("connection", client => {
 	})
 })
 server.listen(8000)
+console.log("Server is")

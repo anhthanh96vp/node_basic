@@ -6,7 +6,7 @@
 	"mysql": {
 		"host": "localhost",
 		"port": 3307,
-		"database": "world",
+		"database": "blog_codeto",
 		"user": "blog",
 		"password": "123456"
 	}

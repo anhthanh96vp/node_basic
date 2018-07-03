@@ -1,4 +1,4 @@
-// domain Module trong Node.js được sử dụng để can thiệp các lỗi chưa được xử lý.Các lỗi này có thể được can thiệp bằng cách sử dụng Internal Binding hoặc External Binding.
+// Domain Module trong Node.js được sử dụng để can thiệp các lỗi chưa được xử lý.Các lỗi này có thể được can thiệp bằng cách sử dụng Internal Binding hoặc External Binding.
 
 // Internal Binding - Error Emmitter đang thực thi phần code của nó bên trong phương thức run của một Domain.
 

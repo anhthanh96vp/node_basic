@@ -24,10 +24,10 @@
 // console.log(test1(2, 3))
 
 // Phần này đọc code bên test1
-import { product } from "./test1"
+import { product } from "./test1";
 
-import { product as product2 } from "./test1"
+import { product as product2 } from "./test1";
 
-product2.name = "gdf"
-console.log(product.name)
-console.log(product2.name)
+product2.name = "gdf";
+console.log(product.name);
+console.log(product2.name);

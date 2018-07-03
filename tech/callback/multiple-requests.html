@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
 </head>
+
 <body>
-    
-    <script>
-        
-        function orderFriedChicken (customerId) {
-            //Thông báo id món ăn
-            console.log("customer Id", customerId);
-            //Đây là 1 function callback nên nó sẽ chạy cookAndBringToCustomer ở dưới trước.
 
-            // Hàm callback này chỉ sau 3 giây mới chạy
-            cookAndBringToCustomer(()=>{
-                console.log('Finish cook for customer id = ', customerId)
-            })
-        }
+	<script>
 
-            //console.log() i am cooking ra, và chạy tiếp 2 vòng nữa.
+		function orderFriedChicken(customerId) {
+			//Thông báo id món ăn
+			console.log("customer Id", customerId);
+			//Đây là 1 function callback nên nó sẽ chạy cookAndBringToCustomer ở dưới trước.
 
-        function cookAndBringToCustomer(callback) {
-            console.log('I am cooking...')
-            setTimeout(callback, 3000)
-        }
+			// Hàm callback này chỉ sau 3 giây mới chạy
+			cookAndBringToCustomer(() => {
+				console.log('Finish cook for customer id = ', customerId)
+			})
+		}
+
+		//console.log() i am cooking ra, và chạy tiếp 2 vòng nữa.
+
+		function cookAndBringToCustomer(callback) {
+			console.log('I am cooking...')
+			setTimeout(callback, 3000)
+		}
 
 
-//3 lần gọi món cùng 1 lúc
+		//3 lần gọi món cùng 1 lúc
 
-    //reques 1
-    orderFriedChicken(10001)
-    //reques 2
-    orderFriedChicken(10002)
-    //reques 3
-    orderFriedChicken(10003)
+		//reques 1
+		orderFriedChicken(10001)
+		//reques 2
+		orderFriedChicken(10002)
+		//reques 3
+		orderFriedChicken(10003)
 
-    </script>
+	</script>
 </body>
+
 </html>
