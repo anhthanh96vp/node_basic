@@ -1,12 +1,12 @@
-import db from "../common/database"
+import {getConnection} from "../common/database"
 import q from "q"
-const conn = db.getConnection()
+//const conn = db.getConnection()
 
 const addUser = user => {
 	if (user) {
 		let defer = q.defer()
 
-		let query = conn.query(
+		let query = getConnection.query(
 			"INSERT INTO users SET ?",
 			user,
 			(error, results) => {
