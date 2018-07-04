@@ -1,26 +1,30 @@
-import {getConnection} from "../common/database"
-import q from "q"
-//const conn = db.getConnection()
+//import sử dụng hàm connect bên file database
 
+import db from "../common/database";
+const conn = db.getConnection();
+
+//import module promise
+import q from "q";
+
+//Hàm insert user lên database
 const addUser = user => {
 	if (user) {
-		let defer = q.defer()
+		let defer = q.defer();
 
-		let query = getConnection.query(
+		// hàm xử lý khí connect server sau đó insert user lên database
+		let query = conn.query(
 			"INSERT INTO users SET ?",
 			user,
-			(error, results) => {
+			(error, result) => {
 				if (error) {
-					defer.reject(error)
+					defer.reject(error);
 				} else {
-					defer.resolve(result)
+					defer.resolve(result);
 				}
 			}
-		)
-
-		return defer.promise
+		);
+		return defer.promise;
 	}
-	return false
-}
-
-module.exports = { addUser: addUser }
+	return false;
+};
+module.exports = { addUser };
