@@ -27,4 +27,24 @@ const addUser = user => {
 	}
 	return false;
 };
-module.exports = { addUser };
+
+//Hàm get trường email ở trên DB về
+const getUserByEmail = email => {
+	if (email) {
+		let defer = q.defer();
+		let query = conn.query(
+			"SELECT * FROM users WHERE ?",
+			{ email: email },
+			(error, result) => {
+				if (error) {
+					defer.reject(error);
+				} else {
+					defer.resolve(result);
+				}
+			}
+		);
+		return defer.promise;
+	}
+	return false;
+};
+module.exports = { addUser, getUserByEmail };

@@ -4,6 +4,7 @@
 import bcrypt from "bcrypt";
 import config from "config";
 
+//Hàm mã hóa password
 const hashPassword = password => {
 	// saltRounds là độ dài bên cofig là salt
 	let saltRounds = config.get("salt");
@@ -17,4 +18,9 @@ const hashPassword = password => {
 	return hash;
 };
 
-module.exports = { hashPassword };
+//Giải mã password
+const comparePassword = (password, hash) => {
+	bcrypt.compareSync(password, hash); // true
+};
+
+module.exports = { hashPassword, comparePassword };

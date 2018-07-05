@@ -92,6 +92,31 @@ router.post("/signin", (req, res) => {
 	//Check lỗi nếu trường email rỗng
 	if (params.email.trim() == 0) {
 		res.render("signin", { data: { error: "Please enter an email" } });
+	} else {
+		let data = userMd.getUserByEmail(params.email);
+		if (data) {
+			data.then(users => {
+				let user = users[0];
+				let status = helper.comparePassword(
+					params.password,
+					user.password
+				);
+
+				if (status) {
+					res.redirect("/admin/");
+				} else {
+					req.session.user = user;
+					console.log(req.session.user);
+					res.render("signin", {
+						data: {
+							error: "Password Wrong"
+						}
+					});
+				}
+			});
+		} else {
+			res.render("signin", { data: { error: "User not exitst" } });
+		}
 	}
 });
 
