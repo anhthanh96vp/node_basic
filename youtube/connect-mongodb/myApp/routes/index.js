@@ -1,3 +1,4 @@
+// lấy router của file food để load
 router = require("./food")
 /* GET home page. */
 router.get("/", (request, response, next) => {

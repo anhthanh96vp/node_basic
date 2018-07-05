@@ -9,7 +9,8 @@ var usersRouter = require("./routes/users")
 
 var app = express()
 
-// CONNECT DB;
+
+// OPTIONS THÔNG TIN ĐỂ CONNECT DATABASE;
 
 const mongoose = require("mongoose")
 
@@ -22,6 +23,8 @@ let options = {
 
 // USE NATIVE PROMISES
 
+//CONNECT VÀO DATABASE DỰA VÀO OPTIONS BÊN TRÊN
+
 mongoose.Promise = global.Promise
 mongoose
 	.connect(
@@ -29,9 +32,11 @@ mongoose
 		options
 	)
 	.then(
+		//CONNECT THÀNH CÔNG
 		() => {
 			console.log("connect DB successfullyu")
 		},
+		//THẤT BẠI
 		err => {
 			console.log(`connect DB failed. Error: ${err}`)
 		}
