@@ -30,10 +30,10 @@
 //use tutorialMongoDB
 
 // Khởi tạo 1 user
-//db.createUser({
+// db.createUser({
 // user: "thanhna",
 // pwd: "thanhna",
-// roles: "["readWrite", "dbAdmin", "dbOwner"]"
+// roles: ["readWrite", "dbAdmin", "dbOwner"]
 // })
 
 // Sau đó tắt hết tiến trình đang chạy đi
@@ -53,3 +53,4 @@
 
 //xem chi tiết phần tử trong file
 //db.foods.find().pretty()
+
