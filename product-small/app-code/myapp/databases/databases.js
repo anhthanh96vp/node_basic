@@ -1,5 +1,8 @@
+// import sequelize, module giúp connect đến database
 import Sequelize from "sequelize"
-export const sequelize = new Sequelize("postgres", "postgres", "1234567", {
+
+//connect đến database postgres với user admin pass admin
+export const sequelize = new Sequelize("postgres", "admin", "admin", {
 	host: "localhost",
 	dialect: "postgres",
 	operatorsAliases: false,

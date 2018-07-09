@@ -1,7 +1,8 @@
 import { sequelize } from "../databases/databases"
 import Sequelize from "sequelize"
-
+//Tạo  các trường và kiểu dữ liệu
 export const List = sequelize.define(
+	//connect tới database table lists
 	"list",
 	{
 		id: {
@@ -22,7 +23,7 @@ export const List = sequelize.define(
 		}
 	},
 	{
-		// don't add the timestamp attributes (updatedAt, createdAt)
+		// không tự động tạo 2 trường updatedAt, createdAt (updatedAt, createdAt)
 		timestamps: false
 	}
 )
